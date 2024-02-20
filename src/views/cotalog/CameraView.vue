@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import { useItemStore } from "@/store/itemStore";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const itemStore = useItemStore();
 const laptopData = ref([
   {
@@ -33,6 +33,13 @@ const laptopData = ref([
     price: "999",
   },
 ]);
+onMounted(() => {
+  fetch("",{
+    headers:{
+      access_token:`Beerial ${itemStore.accessToken}`
+    }
+  })
+});
 </script>
 
 <style scoped>

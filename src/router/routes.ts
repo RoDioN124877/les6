@@ -21,6 +21,14 @@ export default <RouteRecordRaw[]>[
     component: () => import('@/views/ItemView.vue')
   },
   {
+    name: 'post',
+    path: '/post/:id',
+    props: route => ({
+      id: Number(route.params.id),
+    }),
+    component: () => import('@/views/PostView.vue')
+  },
+  {
     name: 'itemComp',
     path: '/itemComp/:id',
     props: route => ({
